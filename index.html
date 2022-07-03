@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        // var datetime = "Last Sync: " + currentdate.getDay() + "/" + currentdate.getMonth()
+        //     + "/" + currentdate.getFullYear() + " @ "
+        //     + currentdate.getHours() + ":"
+        //     + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+        var currentdate = new Date();
+        console.log(currentdate);
+
+        let currentHour = currentdate.getHours();
+        console.log(currentHour);
+
+
+        const Bantham = { lat: 50.279121, lng: -3.884438 };
+        console.log(Bantham);
+
+        const Gwenver = { lat: 50.089757, lng: -5.691629 };
+        console.log(Gwenver);
+
+        // lat_lng = Object.keys(Bantham);
+        // console.log(degrees);
+
+        beach = Object.values(Bantham);
+        console.log(beach);
+
+        // entries = Object.entries(Bantham);
+        // console.log(entries);
+
+
+
+        let lat = beach[0];
+
+        console.log(lat);
+
+        let lng = beach[1];
+        console.log(lng);
+
+
+        let params = 'windSpeed,windDirection,swellHeight,waveDirection,swellPeriod';
+
+        // async function getResponse() {
+
+        //     const request = await fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
+        //         headers: {
+        //             'Authorization': 'd8910aa4-f855-11ec-956e-0242ac130002-d8910b12-f855-11ec-956e-0242ac130002'
+        //         }
+        //     })
+
+        //         .then((response) => response.json()).then((jsonData) => {                    
+
+        //             let Data = jsonData;
+
+        //             console.log(Data);
+
+        //             let currentData = Data.hours[currentHour]
+        //             console.log(currentData);
+
+        //                 let windSpeedNow = currentData.windSpeed
+        //                     console.log(windSpeedNow);
+
+        //                 let windDirectionNow = currentData.windDirectioon
+        //                     console.log(windDirectionNow);
+
+        //                 let swellHeightNow = currentData.swellHeight
+        //                     console.log(swellHeightNow);
+
+        //                 let waveDirectionNow = currentData.waveDirection
+        //                     console.log(waveDirectionNow);
+
+        //                 let swellPeriodNow = currentData.swellPeriod
+        //                     console.log(swellPeriodNow);
+
+        //         });
+
+        // };
+
+        // getResponse();
+
+
+
+        swellPeriodNow = { dwd: 8.64, icon: 6.88, meteo: 5.71, meto: 5.08, noaa: 12.72, sg: 5.08 }
+
+        let seaData = swellPeriodNow;
+
+        let array = Object.values(seaData);
+            // console.log(value);
+
+
+        // function getAverage() {
+
+        //     let sum = 0;
+
+        //     for (const key in array) {
+        //         sum += array[key]
+        //     };
+
+        //     console.log(sum);
+
+        //     const result = sum / array.length;
+
+        //     console.log(result);
+
+        //     return(result);
+        // };
+
+        // getAverage();
+
+        function getAverage() {
+
+            let value = Object.values(seaData);
+            console.log(value);
+
+            let sum = 0;
+
+            for (const key in value) {
+                sum += value[key]
+            };
+
+            console.log(sum);
+
+            const result = sum / value.length;
+
+            console.log(result);
+            return(result);
+        }
+
+        getAverage();
+
+      
+        // let sum = 0;
+
+        // for (let i = 0; i < i.length; i++) {
+        //     sum = sum + value[i];
+        // }
+
+        // console.log(sum);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
