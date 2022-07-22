@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        var currentdate = new Date();
+        console.log(currentdate);
+
+        const currentHour = currentdate.getHours();
+        console.log(currentHour);
+
+
+        const Bantham = { lat: 50.279121, lng: -3.884438 };
+        console.log(Bantham);
+
+        const Gwenver = { lat: 50.089757, lng: -5.691629 };
+        console.log(Gwenver);
+
+
+        beach = Object.values(Bantham);
+        console.log(beach);
+
+
+        const lat = beach[0];
+        console.log(lat);
+
+        const lng = beach[1];
+        console.log(lng);
+
+        function getAverage(obj) {
+
+            let values = Object.values(obj);
+            let sum = 0;
+
+            for (let i = 0; i < values.length; i++) {
+                sum = sum + values[i]
+            };
+            const result = sum / values.length;
+
+            newAverage = document.createElement("p");
+            newAverage.innerHTML = " varable is currently: " + result;
+            document.body.appendChild(newAverage);
+        };
+
+
+
+
+
+        var params = 'windSpeed,windDirection,swellHeight,waveDirection,swellPeriod';
+
+        async function getResponse() {
+
+            const response = await fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
+                headers: {
+                    'Authorization': 'd8910aa4-f855-11ec-956e-0242ac130002-d8910b12-f855-11ec-956e-0242ac130002'
+                }
+            })
+
+             
+                .then((response) => response.json()).then((data) => {
+
+                    let currentData = data.hours[currentHour];
+                    console.log(currentData);
+
+                    let swell = currentData.swellHeight;
+                    console.log(swell);
+                    getAverage(swell);
+
+                    let period = currentData.swellPeriod;
+                    console.log(period);
+                    getAverage(period);
+
+                    let waveDir = currentData.waveDirection;
+                    console.log(waveDir);
+                    getAverage(waveDir);
+
+                    let windDir = currentData.windDirection;
+                    console.log(windDir);
+                    getAverage(windDir);
+
+                    let windVel = currentData.windSpeed;
+                    console.log(windVel);
+                    getAverage(windVel);
+
+                });
+
+        };
+
+        getResponse();
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
