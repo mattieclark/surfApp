@@ -6,32 +6,163 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+
 </head>
 
 <body>
+
+    <div class=container>
+
+        <section class="main">
+
+            <div class="topBar">
+
+                <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+                        </path>
+                    </svg></div>
+
+                <div class="info">
+                    <div class="beach"> Bantham</div>
+                    <div class="time">11:49 23/07/22</div>
+                </div>
+                <div class="compass"><svg width="100%" height="100%" viewBox="0 0 800 600" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+                        <g transform="matrix(8.63043,3.00865e-31,1.06378e-31,8.13636,-1389.09,-3707.16)">
+                            <g transform="matrix(0.115869,-4.28459e-33,-1.51492e-33,0.122905,160.953,455.629)">
+                                <path
+                                    d="M284,371C284,371 284,371 284,371ZM443,371L363.5,321.226L284,371L363.5,168L443,371Z"
+                                    style="fill:rgb(254, 103, 2);stroke:black;stroke-width:3.44px;" />
+                            </g>
+                            <g transform="matrix(0.115869,-4.28459e-33,-1.51492e-33,0.122905,161.242,455.629)">
+                                <text x="334px" y="296.539px"
+                                    style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:72px;">N</text>
+                            </g>
+                        </g>
+                    </svg></div>
+            </div>
+
+            <div class="wavDirection">
+
+                <svg width="100%" height="100%" viewBox="0 0 163 207" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                    style="fill-rule:currentColor;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <g transform="matrix(1,0,0,1,-282.28,-166.28)">
+                        <g transform="matrix(8.63043,3.00865e-31,1.06378e-31,8.13636,-1389.09,-3707.16)">
+                            <g transform="matrix(0.115869,-4.28459e-33,-1.51492e-33,0.122905,160.953,455.629)">
+                                <path
+                                    d="M284,371C284,371 284,371 284,371ZM443,371L363.5,321.226L284,371L363.5,168L443,371Z"
+                                    style="fill:rgb(10, 245, 249);stroke:black;stroke-width:5.44px;" />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <p class="wav__Degrees">245deg</p>
+            </div>
+
+            <div class="wind">
+                <div class="windDirection">
+                    <img src="images/directionArrow.svg" alt="direction-arrow">
+                </div>
+                <div class="windVelocity">25mph</div>
+            </div>
+
+            <div class="swell">Swell is 0.7ft @ 15s</div>
+            <div class="period"><img src="images/Wave_sine_arrow_purpleLine.svg" alt="sineW"> </div>
+
+
+        </section>
+
+    </div>
 
 
 
     <script>
 
+        // TESTING TESTING
+
+        // swellPeriodNow = { dwd: 8.64, icon: 6.88, meteo: 5.71, meto: 5.08, noaa: 12.72, sg: 5.08 }
+
+        // function getAverage(obj) {
+
+        //     let values = Object.values(obj);
+        //     console.log(values);
+
+        //     let sum = 0;
+
+        //     for (let i = 0; i < values.length; i++) {
+        //         sum = sum + values[i];
+        //         } console.log(sum);    
+
+        //         const result = sum / values.length;
+
+        //         console.log(result);
+
+        //         return result;
+
+        //         // newAverage = document.createElement("p");
+        //         // newAverage.innerHTML = " varable is currently: " + result;
+        //         // document.body.appendChild(newAverage);            
+        // };
+
+        // // getAverage(swellPeriodNow);
+
+        // // console.log(getAverage(swellPeriodNow));
+
+        // let waves = getAverage(swellPeriodNow);
+
+        // const wavDir = document.documentElement.style
+        //     .setProperty('--wavDir', waves + 'deg');
+
+        //     console.log(wavDir);
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
         var currentdate = new Date();
         console.log(currentdate);
 
+        const currentYear = currentdate.getFullYear();
+        console.log(currentYear);
+
+        const currentMonth = currentdate.getMonth()+1;
+        console.log(currentMonth);
+
+        const currentDay = currentdate.getDate();
+        console.log(currentDay);
+
         const currentHour = currentdate.getHours();
         console.log(currentHour);
+
+        const currentMins = currentdate.getMinutes();
+        console.log(currentMins);
+
+        const TimeAndDate = currentHour+":"+currentMins+"  "+currentDay+"/"+currentMonth+"/"+currentYear;
+        console.log(TimeAndDate);
+        
+        document.querySelector(".time").innerHTML = TimeAndDate;
+
 
 
         const Bantham = { lat: 50.279121, lng: -3.884438 };
         console.log(Bantham);
+        const BanthamDeg_N_correct = 225;
 
         const Gwenver = { lat: 50.089757, lng: -5.691629 };
         console.log(Gwenver);
+        const GwenverDeg_N_correct = 270;
 
 
-        beach = Object.values(Bantham);
+        let beach = Object.values(Bantham);
         console.log(beach);
-
 
         const lat = beach[0];
         console.log(lat);
@@ -49,58 +180,73 @@
             };
             const result = sum / values.length;
 
-            newAverage = document.createElement("p");
-            newAverage.innerHTML = " varable is currently: " + result;
-            document.body.appendChild(newAverage);
+            return (result);
+
+            // newAverage = document.createElement("p");
+            // newAverage.innerHTML = " varable is currently: " + result;
+            // document.body.appendChild(newAverage);
         };
 
 
 
 
 
-        var params = 'windSpeed,windDirection,swellHeight,waveDirection,swellPeriod';
+        // var params = 'windSpeed,windDirection,swellHeight,waveDirection,swellPeriod';
 
-        async function getResponse() {
+        // async function getResponse() {
 
-            const response = await fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
-                headers: {
-                    'Authorization': 'd8910aa4-f855-11ec-956e-0242ac130002-d8910b12-f855-11ec-956e-0242ac130002'
-                }
-            })
-
-             
-                .then((response) => response.json()).then((data) => {
-
-                    let currentData = data.hours[currentHour];
-                    console.log(currentData);
-
-                    let swell = currentData.swellHeight;
-                    console.log(swell);
-                    getAverage(swell);
-
-                    let period = currentData.swellPeriod;
-                    console.log(period);
-                    getAverage(period);
-
-                    let waveDir = currentData.waveDirection;
-                    console.log(waveDir);
-                    getAverage(waveDir);
-
-                    let windDir = currentData.windDirection;
-                    console.log(windDir);
-                    getAverage(windDir);
-
-                    let windVel = currentData.windSpeed;
-                    console.log(windVel);
-                    getAverage(windVel);
-
-                });
-
-        };
-
-        getResponse();
+        //     // const response = await fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
+        //     //     headers: {
+        //     //         'Authorization': 'd8910aa4-f855-11ec-956e-0242ac130002-d8910b12-f855-11ec-956e-0242ac130002'
+        //     //     }
+        //     // })
 
 
+        //         .then((response) => response.json()).then((data) => {
+        //             console.log(data);
+
+        //             let currentData = data.hours[currentHour];
+        //             console.log(currentData);
+
+        //             let swell = currentData.swellHeight;
+        //             console.log(swell);
+        //             const Swell_Height = getAverage(swell);
+        //             const Swell_Height_rounded = Swell_Height.toFixed(2);
+
+        //             let period = currentData.swellPeriod;
+        //             console.log(period);
+        //             const swell_Period = getAverage(period);
+        //             const Swell_Period_rounded = swell_Period.toFixed(2);
+
+        //             const Swell_Data = document.querySelector(".swell");
+        //             Swell_Data.innerHTML = "Swell is:" + " " + Swell_Period_rounded + "s" + " " + "@" + " " + Swell_Height_rounded + "ft"
+
+        //             const waveDir = currentData.waveDirection;
+        //             const wavArrow = getAverage(waveDir);
+        //             const wavArrow_rounded = wavArrow.toFixed(0);
+        //             const wavDir = document.documentElement.style.setProperty('--wavDir', wavArrow + 'deg');
+        //             const wav_deg = document.querySelector(".wav__Degrees");
+        //             wav_deg.innerHTML = wavArrow_rounded + "deg";
+
+
+        //             const windDir = currentData.windDirection;
+        //             console.log(windDir);
+        //             const windArrow = getAverage(windDir);
+        //             console.log(windArrow);
+        //             const windDirr = document.documentElement.style.setProperty('--windDir', windArrow + 'deg');
+
+        //             let windVel = currentData.windSpeed;
+        //             console.log(windVel);
+        //             const wind_velocity = getAverage(windVel);
+        //             const vel_data = document.querySelector(".windVelocity");
+        //             vel_data.innerHTML = wind_velocity + "mph";
+
+
+        //         });
+
+        // };
+
+        // getResponse();
 
 
 
