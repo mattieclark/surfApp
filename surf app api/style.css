@@ -20,7 +20,59 @@ body {
     max-width:100vw;
     max-height: 100vh;
     overflow: clip;
+    z-index: 0;
 }
+
+.nav_window {
+    position: absolute;
+    width:100%;
+    height:100%;
+    display: none;
+    flex-direction: column;
+    background-color: blanchedalmond;
+    opacity: 0.87;  
+    z-index: +1; 
+    padding-top: 1rem;  
+    align-items: center;   
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem; 
+
+}
+
+#menu_list {
+    width:100%;
+}
+
+#menu_list p {
+    position: relative;
+    text-align: center;
+    width:100%;
+    border-radius: 5%;
+    
+}
+
+#menu_list p:hover {
+    background-color: coral; 
+    width: 100%;   
+    transition: 0.07s;
+    font-size: 1.75rem;
+    
+    
+
+}
+
+.active {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    
+}
+
+.selected {
+    color: aquamarine;
+}
+
 
 section {    
     width: 100vw;
@@ -42,10 +94,8 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-
-
 }
+
 
 .info {
     position: relative;

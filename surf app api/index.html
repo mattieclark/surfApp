@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="style.css" rel="stylesheet">
+    <script src="script.js" rel="script" defer></script>
 
 </head>
 
@@ -14,9 +15,25 @@
 
     <div class=container>
 
+
+
+        <div class="nav_window">
+            <!-- <p class="menu_list">batham</p>
+            <p class="menu_list">gwnver</p> -->
+            <div id="menu_list"></div>
+            <form id="beach_form">
+                <label for="beaches"></label>
+                <select name="beaches" id="beach_dropdown"></select>
+            </form>
+        </div>
+
         <section class="main">
 
+
+
             <div class="topBar">
+
+
 
                 <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                         class="bi bi-list" viewBox="0 0 16 16">
@@ -81,7 +98,7 @@
     </div>
 
 
-
+    <!-- 
     <script>
 
         // TESTING TESTING
@@ -125,6 +142,19 @@
         /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+        const Nav = document.querySelector(".nav");
+        const Menu = document.querySelector(".nav_window");
+        // const list = Menu.children;
+
+        Nav.addEventListener("click", function () {
+            Menu.classList.add("active");
+        });
+
+        Menu.addEventListener("click", function () {
+            Menu.classList.remove("active");
+        });
+
+
 
 
         var currentdate = new Date();
@@ -133,7 +163,7 @@
         const currentYear = currentdate.getFullYear();
         console.log(currentYear);
 
-        const currentMonth = currentdate.getMonth()+1;
+        const currentMonth = currentdate.getMonth() + 1;
         console.log(currentMonth);
 
         const currentDay = currentdate.getDate();
@@ -145,9 +175,9 @@
         const currentMins = currentdate.getMinutes();
         console.log(currentMins);
 
-        const TimeAndDate = currentHour+":"+currentMins+"  "+currentDay+"/"+currentMonth+"/"+currentYear;
+        const TimeAndDate = currentHour + ":" + currentMins + "  " + currentDay + "/" + currentMonth + "/" + currentYear;
         console.log(TimeAndDate);
-        
+
         document.querySelector(".time").innerHTML = TimeAndDate;
 
 
@@ -155,6 +185,17 @@
         const Bantham = { lat: 50.279121, lng: -3.884438 };
         console.log(Bantham);
         const BanthamDeg_N_correct = 225;
+
+        // menu_list = document.querySelector(".menu_list_2");
+
+        // banthamNav = document.createElement("p");
+        // banthamNav.innerHTML = " Bantham ";
+        // document.menu_list.appendChild(banthamNav);
+        
+
+            //newAverage = document.createElement("p");
+            // newAverage.innerHTML = " varable is currently: " + result;
+            // document.body.appendChild(newAverage);
 
         const Gwenver = { lat: 50.089757, lng: -5.691629 };
         console.log(Gwenver);
@@ -250,7 +291,7 @@
 
 
 
-    </script>
+     </script> -->
 
 </body>
 
