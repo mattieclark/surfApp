@@ -1,3 +1,21 @@
+
+//////////////////////////////////Static variables///////////////////////////////////////
+const Bantham = { lat: 50.279121, lng: -3.884438, degN: 225 };
+console.log(Bantham);
+const Bantham_JSON = JSON.stringify(Bantham);
+console.log(Bantham_JSON);
+
+const Gwenver = { lat: 50.089757, lng: -5.691629, degN: 270};
+console.log(Gwenver);
+const Gwenver_JSON = JSON.stringify(Gwenver);
+console.log(Gwenver_JSON);
+
+
+
+
+
+
+
 ////////////////////////////////// main variables /////////////////////////////////////////
 
 
@@ -25,29 +43,9 @@ console.log(TimeAndDate);
 document.querySelector(".time").innerHTML = TimeAndDate;
 
 
-const Bantham = { lat: 50.279121, lng: -3.884438 };
-console.log(Bantham);
-const BanthamDeg_N_correct = 225;
-
-const Gwenver = { lat: 50.089757, lng: -5.691629 };
-console.log(Gwenver);
-const GwenverDeg_N_correct = 270;
-
-let gwenver = true;
 
 let beach = Object.values(Bantham);
 console.log(beach);
-
-// if (bantham = true) {
-//     let beach = Object.values(Bantham);
-//     console.log(beach + "bantham");
-// }
-
-// if (gwenver = true) {
-//     let beach = Object.values(Gwenver);
-//     console.log(beach + "gwenver");
-// };
-
 
 
 
@@ -56,6 +54,12 @@ console.log(lat);
 
 const lng = beach[1];
 console.log(lng);
+
+const Deg_N_correct = beach[3];
+
+const N = document.documentElement.style.setProperty('--rotateN', Deg_N_correct + 'deg');
+
+
 
 function getAverage(obj) {
 
@@ -73,36 +77,45 @@ function getAverage(obj) {
 
 
 /////////////////////////////////////Beach Menu////////////////////////////////
-function newBeach(newName) {
+
+function newBeach(newName, newValue) {
     const Beach = document.createElement("p");
     Beach.setAttribute("id", newName);
+    Beach.setAttribute("value", newValue);
     Beach.innerHTML = newName;
 
     document.querySelector("#menu_list").appendChild(Beach);
 };
 
-newBeach("Bantham");
-newBeach("Gwenver");
+const Test = {lat: 420, lng: -69, degN: 540};
+const Test2 = JSON.stringify(Test);
+console.log(Test2);
 
 
 
+newBeach("Bantham",  Bantham_JSON);
+newBeach("Gwenver", Gwenver_JSON);
+newBeach("test", Test2);
 
-function beachOption(newName) {
-    const option = document.createElement("option");
-    option.setAttribute("value", newName);
-    option.innerHTML = newName;
 
-    document.querySelector("#beach_dropdown").appendChild(option);
-}
+/////////////////Form create option (problematic on submit)/////////////////////////////////
 
-beachOption("Bantham");
-beachOption("Gwenver");
+// function beachOption(newName) {
+//     const option = document.createElement("option");
+//     option.setAttribute("value", newName);
+//     option.innerHTML = newName;
+
+//     document.querySelector("#beach_dropdown").appendChild(option);
+// }
+
+// beachOption("Bantham");
+// beachOption("Gwenver");
 
 
 
 const Nav = document.querySelector(".nav");
 const Menu = document.querySelector(".nav_window");
-// const list = Menu.children;
+const Submit = document.querySelector("#submit_beach");
 
 
 
@@ -110,28 +123,61 @@ Nav.addEventListener("click", function () {
     Menu.classList.add("active");
 });
 
-Menu.addEventListener("click", function () {
-    Menu.classList.remove("active");
-});
+// Submit.addEventListener("click", function () {
+//     Menu.classList.remove("active");
+//     // loadSelected();
+// });
 
 
 
 //////////////////////////////////////Beach Selecter/////////////////////////////
+// mk1
 
 let menu_select = document.querySelector("#menu_list");
 
+let Selector = menu_select.addEventListener("click", function (event) {
 
-
-
-menu_select.addEventListener("click", function (event) {
-
+      
     let test = Array.from(menu_select.children);
     console.log(test);
 
     event.target.classList.toggle("selected");
 
+    let element = event.target;
+
+    console.log(element);
+
+    let value = element.getAttribute("Value");    
+    console.log(value);
+
+    let valueObj = JSON.parse(value);
+
+    console.log(valueObj);
+
+
+
+    Menu.classList.remove("active");
+
+      
 
 });
+
+
+
+
+
+////////////////////form (dont think this is the most straight foward approach => as page reload is problematic) //////////////////////////////////////////
+
+// function loadSelected() {
+
+//     let formData = document.getElementById("beach_form");
+    
+//     console.log(formData);
+
+// };
+
+// loadSelected();
+
 
 
 
