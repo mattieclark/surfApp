@@ -51,6 +51,15 @@ document.querySelector(".time").innerHTML = TimeAndDate;
 let beach = Object.values(Bantham);
 console.log(beach);
 
+function Select_beach(obj) { 
+    result = Object.values(obj);
+        return result;    
+};
+
+// Select_beach(Gwenver);
+
+console.log(Select_beach(Gwenver));
+
 
 
 const lat = beach[0];
@@ -135,10 +144,10 @@ Nav.addEventListener("click", function () {
 let menu_select = document.querySelector("#menu_list");
 
 let Selector = menu_select.addEventListener("click", function (event) {
-
+    Menu.classList.remove("active");  
       
-    let test = Array.from(menu_select.children);
-    console.log(test);
+    // let test = Array.from(menu_select.children);
+    // console.log(test);
 
     event.target.classList.toggle("selected");
 
@@ -151,9 +160,12 @@ let Selector = menu_select.addEventListener("click", function (event) {
     let valueObj = JSON.parse(value);
     console.log(valueObj);
 
+    let selected_Prameters = Select_beach(valueObj);
+    console.log(selected_Prameters);
 
-
-    Menu.classList.remove("active");     
+    
+    
+    
 
 });
 
