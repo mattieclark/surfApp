@@ -10,6 +10,10 @@ console.log(Gwenver);
 const Gwenver_JSON = JSON.stringify(Gwenver);
 console.log(Gwenver_JSON);
 
+const Test = {lat: 420, lng: -69, degN: 540};
+const Test2 = JSON.stringify(Test);
+console.log(Test2);
+
 
 
 
@@ -87,11 +91,6 @@ function newBeach(newName, newValue) {
     document.querySelector("#menu_list").appendChild(Beach);
 };
 
-const Test = {lat: 420, lng: -69, degN: 540};
-const Test2 = JSON.stringify(Test);
-console.log(Test2);
-
-
 
 newBeach("Bantham",  Bantham_JSON);
 newBeach("Gwenver", Gwenver_JSON);
@@ -144,21 +143,17 @@ let Selector = menu_select.addEventListener("click", function (event) {
     event.target.classList.toggle("selected");
 
     let element = event.target;
-
     console.log(element);
 
     let value = element.getAttribute("Value");    
     console.log(value);
 
     let valueObj = JSON.parse(value);
-
     console.log(valueObj);
 
 
 
-    Menu.classList.remove("active");
-
-      
+    Menu.classList.remove("active");     
 
 });
 
