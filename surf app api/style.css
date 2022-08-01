@@ -1,11 +1,12 @@
 :root {
     --rotateN: 225deg;    
-    --wavDir: 180deg;
+    --wavDir: 0deg;
     --wavD_N: calc(var(--rotateN) + var(--wavDir));
-    --windDir: 45deg;
+    --windDir: 0deg;
     --windD_N: calc(var(--rotateN) + var(--windDir));
     --banthamImg: url(images/buislandSVG.svg);
     --gwenverImg: url(images/GwenverSVG.svg);
+    --BeachImage: url(images/wavephoto.svg);
 } 
 
 body {    
@@ -78,7 +79,7 @@ section {
     width: 100vw;
     height:100vh;
     padding: 5%;
-    background-image: var(--banthamImg);
+    background-image: var(--BeachImage);
     background-size: cover;
     background-position: 30% 20%;
     
@@ -138,6 +139,7 @@ section {
     left:5vw;
     width:50vw;
     height:40vw;
+    
 
 
 }
@@ -150,6 +152,8 @@ section {
 
 }
 
+
+
 .wavDirection svg {
     position: relative;
     width:30vw;
@@ -160,12 +164,13 @@ section {
 .wind {
     display: flex;
     flex-direction: row;
-    align-items: center;   
+    align-items: center; 
+     
 }
 
 .windVelocity {
     position: relative;
-    left:15vw;
+    left:20vw;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 
@@ -177,6 +182,7 @@ section {
     top: 7vh;
     width: 50vw;
     height: 50vw;
+    transform: rotate(-47deg);
 
 }
 
