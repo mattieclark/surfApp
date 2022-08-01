@@ -94,6 +94,26 @@ function SetImage (Name) {
 
 /////////////////////////////////////Beach Menu////////////////////////////////
 
+function getNewBeach_data() {
+
+    const newBeach_Name = document.getElementById("newBeach").value;
+    const newBeach_Lat = document.getElementById("lat").value;
+    const newBeach_Lng = document.getElementById("lng").value;
+    const newBeach_DegN = document.getElementById("deg_to_North").value;
+
+    console.log(newBeach_Name+" "+newBeach_Lat+" "+newBeach_Lng+" "+newBeach_DegN);
+
+}
+
+const newBeach_submit = document.getElementById("submit_new_beach");
+newBeach_submit.addEventListener("click", function(){
+    getNewBeach_data();
+
+
+});
+
+
+
 function newBeach(newName, newValue) {
     const Beach = document.createElement("p");
     Beach.setAttribute("id", newName);
