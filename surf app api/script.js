@@ -129,20 +129,6 @@ newBeach("Gwenver", Gwenver_JSON);
 newBeach("test", Test2);
 
 
-/////////////////Form create option (problematic on submit)/////////////////////////////////
-
-// function beachOption(newName) {
-//     const option = document.createElement("option");
-//     option.setAttribute("value", newName);
-//     option.innerHTML = newName;
-
-//     document.querySelector("#beach_dropdown").appendChild(option);
-// }
-
-// beachOption("Bantham");
-// beachOption("Gwenver");
-
-
 
 const Nav = document.querySelector(".nav");
 const Menu = document.querySelector(".nav_window");
@@ -266,31 +252,11 @@ let Selector = menu_select.addEventListener("click", function (event) {
 
     };
 
-    getResponse();
-
-
-    
+    getResponse();    
     
     
 
 });
-
-
-
-
-
-////////////////////form (dont think this is the most straight foward approach => as page reload is problematic) //////////////////////////////////////////
-
-// function loadSelected() {
-
-//     let formData = document.getElementById("beach_form");
-    
-//     console.log(formData);
-
-// };
-
-// loadSelected();
-
 
 
 
