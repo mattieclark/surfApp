@@ -88,8 +88,19 @@ function getAverage(obj) {
 
 };
 
+
+//////////////////////////////////Needs work on file not found error ////////////////////////////////////
+
+
 function SetImage (Name) {
-    document.documentElement.style.setProperty("--BeachImage", "url(images/"+Name+"SVG.svg)");
+
+    // let beach_image = document.documentElement.style.setProperty("--BeachImage", "url(images/"+Name+"SVG.svg)");
+    // console.log(beach_image);
+   
+    if (Name =="Bantham" || Name == "Gwenver") {document.documentElement.style.setProperty("--BeachImage", "url(images/"+Name+"SVG.svg)")}
+
+    else {document.documentElement.style.setProperty("--BeachImage", "url(images/"+"wavephoto"+".svg)")};
+        
 };
 
 /////////////////////////////////////Beach Menu////////////////////////////////
@@ -205,68 +216,67 @@ let Selector = menu_select.addEventListener("click", function (event) {
 
     let Deg_N_correct =selected_Prameters[2];
     console.log(Deg_N_correct);
-
-    let N = document.documentElement.style.setProperty('--rotateN', Deg_N_correct + 'deg');
-    console.log(N);
+    document.documentElement.style.setProperty('--rotateN', Deg_N_correct + 'deg');
+    // console.log(N);
 
     
-    var params = 'windSpeed,windDirection,swellHeight,waveDirection,swellPeriod';
+    // var params = 'windSpeed,windDirection,swellHeight,waveDirection,swellPeriod';
 
-    async function getResponse() {
+    // async function getResponse() {
 
-        const response = await fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
-            headers: {
-                'Authorization': 'd8910aa4-f855-11ec-956e-0242ac130002-d8910b12-f855-11ec-956e-0242ac130002'
-            }
-        })
-
-
-            .then((response) => response.json()).then((data) => {
-                console.log(data);
-
-                let currentData = data.hours[currentHour];
-                console.log(currentData);
-
-                let swell = currentData.swellHeight;
-                console.log(swell);
-                const Swell_Height = getAverage(swell);
-                const Swell_Height_rounded = Swell_Height.toFixed(2);
-
-                let period = currentData.swellPeriod;
-                console.log(period);
-                const swell_Period = getAverage(period);
-                const Swell_Period_rounded = swell_Period.toFixed(2);
-
-                const Swell_Data = document.querySelector(".swell");
-                Swell_Data.innerHTML = "Swell is:" + " " + Swell_Period_rounded + "s" + " " + "@" + " " + Swell_Height_rounded + "ft"
-
-                const waveDir = currentData.waveDirection;
-                const wavArrow = getAverage(waveDir);
-                const wavArrow_rounded = wavArrow.toFixed(0);
-                document.documentElement.style.setProperty('--wavDir', wavArrow + 'deg');
-                const wav_deg = document.querySelector(".wav__Degrees");
-                wav_deg.innerHTML = wavArrow_rounded + "deg";
+    //     const response = await fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
+    //         headers: {
+    //             'Authorization': 'd8910aa4-f855-11ec-956e-0242ac130002-d8910b12-f855-11ec-956e-0242ac130002'
+    //         }
+    //     })
 
 
-                const windDir = currentData.windDirection;
-                console.log(windDir);
-                const windArrow = getAverage(windDir);
-                console.log(windArrow);
-                document.documentElement.style.setProperty('--windDir', windArrow + 'deg');
+    //         .then((response) => response.json()).then((data) => {
+    //             console.log(data);
 
-                let windVel = currentData.windSpeed;
-                console.log(windVel);
-                const wind_velocity = getAverage(windVel);
-                const wind_velocity_rounded = wind_velocity.toFixed(0);
-                const vel_data = document.querySelector(".windVelocity");
-                vel_data.innerHTML = wind_velocity_rounded + "mph";
+    //             let currentData = data.hours[currentHour];
+    //             console.log(currentData);
+
+    //             let swell = currentData.swellHeight;
+    //             console.log(swell);
+    //             const Swell_Height = getAverage(swell);
+    //             const Swell_Height_rounded = Swell_Height.toFixed(2);
+
+    //             let period = currentData.swellPeriod;
+    //             console.log(period);
+    //             const swell_Period = getAverage(period);
+    //             const Swell_Period_rounded = swell_Period.toFixed(2);
+
+    //             const Swell_Data = document.querySelector(".swell");
+    //             Swell_Data.innerHTML = "Swell is:" + " " + Swell_Period_rounded + "s" + " " + "@" + " " + Swell_Height_rounded + "ft"
+
+    //             const waveDir = currentData.waveDirection;
+    //             const wavArrow = getAverage(waveDir);
+    //             const wavArrow_rounded = wavArrow.toFixed(0);
+    //             document.documentElement.style.setProperty('--wavDir', wavArrow + 'deg');
+    //             const wav_deg = document.querySelector(".wav__Degrees");
+    //             wav_deg.innerHTML = wavArrow_rounded + "deg";
 
 
-            });
+    //             const windDir = currentData.windDirection;
+    //             console.log(windDir);
+    //             const windArrow = getAverage(windDir);
+    //             console.log(windArrow);
+    //             document.documentElement.style.setProperty('--windDir', windArrow + 'deg');
 
-    };
+    //             let windVel = currentData.windSpeed;
+    //             console.log(windVel);
+    //             const wind_velocity = getAverage(windVel);
+    //             const wind_velocity_rounded = wind_velocity.toFixed(0);
+    //             const vel_data = document.querySelector(".windVelocity");
+    //             vel_data.innerHTML = wind_velocity_rounded + "mph";
 
-    getResponse();    
+
+    //         });
+
+    // };
+
+    // getResponse();    
     
     
 
