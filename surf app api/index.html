@@ -21,14 +21,16 @@
             <!-- <p class="menu_list">batham</p>
             <p class="menu_list">gwnver</p> -->
             <div id="menu_list"></div>
-            
-                <label for="New beach">add new beach</label><br>
-                <input type="text"  name="beach" id="newBeach" placeholder="Beach name here"></input><br>
-                <input type="number"  name="lat" id="lat" placeholder="Latitude coordinate here"></input><br>
-                <input type="number"  name="lng" id="lng" placeholder="Langitude here"></input><br>
-                <input type="number"  name="deg_to_North" id="deg_to_North" placeholder="Degrees from north facing"></input><br>
-                <button type="button" id="submit_new_beach">submit data</button>                
-            
+
+                <div id="newBeachForm">
+                
+                    <label for="New beach" id="newBeachLabel">add new beach</label><br>
+                    <input type="text"  name="beach" id="newBeach" placeholder="Beach name here"></input><br>
+                    <input type="number"  name="lat" id="lat" placeholder="Latitude coordinate here"></input><br>
+                    <input type="number"  name="lng" id="lng" placeholder="Langitude here"></input><br>
+                    <input type="number"  name="deg_to_North" id="deg_to_North" placeholder="Degrees from north facing"></input><br>
+                    <button type="button" id="submit_new_beach">submit data</button>                
+                </div>
              
             </div>
 
@@ -49,7 +51,7 @@
 
                 <div class="info">
                     <div id="beach"> No Beach Selected</div>
-                    <div class="time">11:49 23/07/22</div>
+                    <div class="time">Time to Surf</div>
                 </div>
                 <div class="compass"><svg width="100%" height="100%" viewBox="0 0 800 600" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -84,7 +86,7 @@
                         </g>
                     </g>
                 </svg>
-                <p class="wav__Degrees">245deg</p>
+                <p class="wav__Degrees"></p>
             </div>
 
             <div class="wind">
@@ -93,10 +95,10 @@
                         <img src="images/directionArrow.svg" alt="direction-arrow">
                     </div>
                 
-                <div class="windVelocity">25mph</div>
+                <div class="windVelocity"></div>
             </div>
 
-            <div class="swell">Swell is 0.7ft @ 15s</div>
+            <div class="swell"></div>
             <div class="period"><img src="images/Wave_sine_arrow_purpleLine.svg" alt="sineW"> </div>
 
 

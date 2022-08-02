@@ -74,6 +74,22 @@ body {
     color: aquamarine;
 }
 
+#menu_list {
+    position: relative;
+    margin-top: 3vh;
+   
+}
+
+#newBeachForm {
+    position: absolute;
+    bottom: 10%;
+    
+}
+
+#newBeachLabel {
+    font-size: 1.25rem;
+}
+
 
 section {    
     width: 100vw;

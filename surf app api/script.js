@@ -101,13 +101,26 @@ function getNewBeach_data() {
     const newBeach_Lng = document.getElementById("lng").value;
     const newBeach_DegN = document.getElementById("deg_to_North").value;
 
-    console.log(newBeach_Name+" "+newBeach_Lat+" "+newBeach_Lng+" "+newBeach_DegN);
+    let NewBeach_data_array = [newBeach_Name, newBeach_Lat, newBeach_Lng, newBeach_DegN];
+    let NewBeach_data_object = {newBeach_Lat, newBeach_Lng, newBeach_DegN};
+    
+    console.log(NewBeach_data_object);
+
+    let newBeach_JSON = JSON.stringify(NewBeach_data_object);
+
+    console.log(newBeach_JSON);
+
+
+    newBeach(NewBeach_data_array[0], newBeach_JSON);
+
+    // return ([newBeach_Name, newBeach_Lat, newBeach_Lng, newBeach_DegN])
 
 }
 
 const newBeach_submit = document.getElementById("submit_new_beach");
 newBeach_submit.addEventListener("click", function(){
     getNewBeach_data();
+    // console.log(getNewBeach_data());
 
 
 });
@@ -244,8 +257,9 @@ let Selector = menu_select.addEventListener("click", function (event) {
                 let windVel = currentData.windSpeed;
                 console.log(windVel);
                 const wind_velocity = getAverage(windVel);
+                const wind_velocity_rounded = wind_velocity.toFixed(0);
                 const vel_data = document.querySelector(".windVelocity");
-                vel_data.innerHTML = wind_velocity + "mph";
+                vel_data.innerHTML = wind_velocity_rounded + "mph";
 
 
             });
